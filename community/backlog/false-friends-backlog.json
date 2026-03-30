@@ -293,7 +293,7 @@
     "explanation": "Used to comfort someone: 'never mind'. (Set 2)",
     "example": "ミスしてもドンマイ！",
     "id": 33,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {
@@ -736,7 +736,7 @@
     "explanation": "マンション means apartment building in Japanese. (Set 5)",
     "example": "駅前のマンションに住んでいます。",
     "id": 82,
-    "issued": false,
+    "issued": true,
     "completed": false
   },
   {

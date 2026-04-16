@@ -236,11 +236,12 @@ const ModeSetupMenu = ({
 
   return (
     <div className='fixed inset-0 z-[70] bg-(--background-color)'>
-      <div className='flex min-h-[100dvh] flex-col items-center justify-center p-4'>
-        <div className='w-full max-w-lg space-y-4'>
+      <div className='h-full w-full overflow-x-hidden overflow-y-auto overscroll-y-contain'>
+        <div className='mx-auto flex min-h-[100dvh] w-full max-w-lg flex-col justify-start p-4 sm:justify-center'>
+          <div className='w-full space-y-4'>
           {/* Header */}
           <div className='space-y-3 text-center'>
-            <span className='motion-safe:animate-float mx-auto flex h-20 w-20 items-center justify-center rounded-3xl border-b-14 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [--float-distance:-5px]'>
+            <span className='motion-safe:animate-float mx-auto flex h-20 w-20 items-center justify-center rounded-4xl border-b-14 border-(--secondary-color-accent) bg-(--secondary-color) text-(--background-color) [--float-distance:-5px]'>
               <ModeIcon size={40} className='fill-current' />
             </span>
             <h1 className='text-2xl font-bold text-(--main-color)'>
@@ -396,8 +397,8 @@ const ModeSetupMenu = ({
             </>
           )}
 
-          {/* Action Buttons */}
-          <div className='mx-auto flex w-full max-w-4xl flex-row items-center justify-center gap-2 md:gap-4'>
+            {/* Action Buttons */}
+            <div className='mx-auto flex w-full max-w-4xl flex-row items-center justify-center gap-2 md:gap-4'>
             <button
               className={clsx(
                 'flex w-1/2 flex-row items-center justify-center gap-2 px-2 py-3 sm:px-6',
@@ -461,6 +462,7 @@ const ModeSetupMenu = ({
                 </span>
               </button>
             </Link>
+            </div>
           </div>
         </div>
       </div>

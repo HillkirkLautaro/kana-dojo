@@ -675,5 +675,33 @@
   "english": "Next you'll say, 'Good grief!' (alt wording 10)",
   "anime": "JoJo's Bizarre Adventure: Stardust Crusaders",
   "character": "Joseph Joestar"
-}
+  },
+  {
+  "japanese": "俺がお前を守る",
+  "romaji": "Ore ga omae o mamoru",
+  "english": "I will protect you.",
+  "anime": "Sword Art Online",
+  "character": "Kirito"
+  },
+  {
+  "japanese": "諦めたらそこで試合終了ですよ",
+  "romaji": "Akirametara soko de shiai shuuryou desu yo",
+  "english": "If you give up, that's when the game is over.",
+  "anime": "Slam Dunk",
+  "character": "Coach Anzai"
+  },
+  {
+  "japanese": "私が来た！",
+  "romaji": "Watashi ga kita!",
+  "english": "I am here!",
+  "anime": "My Hero Academia",
+  "character": "All Might"
+  },
+  {
+  "japanese": "人は誰かに愛されることで強くなれる",
+  "romaji": "Hito wa dareka ni aisareru koto de tsuyoku nareru",
+  "english": "People become stronger when they are loved by someone.",
+  "anime": "Naruto",
+  "character": "Gaara"
+  }
 ]

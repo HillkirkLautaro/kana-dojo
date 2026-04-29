@@ -147,11 +147,11 @@
     "character": "Rival characters"
   },
   {
-  "japanese": "勝つと思うな、思えば負けよ",
-  "romaji": "Katsu to omou na, omoeba makeyo",
-  "english": "If you only think of winning, you lose.",
-  "game": "Samurai game proverb line",
-  "character": "Musashi reference"
+    "japanese": "勝つと思うな、思えば負けよ",
+    "romaji": "Katsu to omou na, omoeba makeyo",
+    "english": "If you only think of winning, you lose.",
+    "game": "Samurai game proverb line",
+    "character": "Musashi reference"
   },
   {
     "japanese": "風が、来る！",
@@ -172,24 +172,32 @@
     "timestamp": "2026-04-27T01:35:11.532100"
   },
   {
-  "japanese": "冒険の始まりだ！",
-  "romaji": "Bouken no hajimari da!",
-  "english": "This is the beginning of the adventure!",
-  "game": "Dragon Quest XI",
-  "character": "Hero / party lines"
+    "japanese": "冒険の始まりだ！",
+    "romaji": "Bouken no hajimari da!",
+    "english": "This is the beginning of the adventure!",
+    "game": "Dragon Quest XI",
+    "character": "Hero / party lines"
   },
   {
-  "japanese": "それもまた一興",
-  "romaji": "Sore mo mata ikkyou",
-  "english": "That too is another form of enjoyment.",
-  "game": "Like a Dragon: Ishin!",
-  "character": "Sakamoto Ryouma"
-},
-{
-  "japanese": "仲間を信じろ",
-  "romaji": "Nakama o shinjiro",
-  "english": "Believe in your comrades.",
-  "game": "Dragon Quest series",
-  "character": "Recurring command voice"
-}
+    "japanese": "それもまた一興",
+    "romaji": "Sore mo mata ikkyou",
+    "english": "That too is another form of enjoyment.",
+    "game": "Like a Dragon: Ishin!",
+    "character": "Sakamoto Ryouma"
+  },
+  {
+    "japanese": "仲間を信じろ",
+    "romaji": "Nakama o shinjiro",
+    "english": "Believe in your comrades.",
+    "game": "Dragon Quest series",
+    "character": "Recurring command voice"
+  },
+  {
+    "id": 56,
+    "quote": "The cake is a lie",
+    "game": "Portal",
+    "character": "GLaDOS",
+    "issued": false,
+    "completed": false
+  }
 ]

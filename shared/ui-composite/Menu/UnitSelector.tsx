@@ -280,13 +280,7 @@ const UnitSelector = () => {
 
           {activeCollection &&
             shouldShowSubunitSelector(activeCollection.levelCount) && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                style={{ overflow: 'hidden' }}
-              >
+              <>
                 <div className='-mx-2 my-3 h-0.5 bg-(--border-color)' />
                 <div className='pb-1'>
                   <SubunitSelector
@@ -295,7 +289,7 @@ const UnitSelector = () => {
                     onSelect={handleSubunitSelect}
                   />
                 </div>
-              </motion.div>
+              </>
             )}
         </div>
       </div>

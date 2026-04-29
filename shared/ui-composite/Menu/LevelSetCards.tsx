@@ -133,6 +133,7 @@ const VisibleRowsSection = <TItem,>({
         const firstSetNumber = rowSets[0]?.name.match(/\d+/)?.[0] || '1';
         const lastSetNumber =
           rowSets[rowSets.length - 1]?.name.match(/\d+/)?.[0] || firstSetNumber;
+        const isSingleLevel = firstSetNumber === lastSetNumber;
 
         return (
           <div
@@ -166,8 +167,8 @@ const VisibleRowsSection = <TItem,>({
                   size={28}
                 />
                 <span className='max-lg:hidden'>
-                  Levels {firstSetNumber}
-                  {firstSetNumber !== lastSetNumber ? `-${lastSetNumber}` : ''}
+                  {isSingleLevel ? 'Level' : 'Levels'} {firstSetNumber}
+                  {!isSingleLevel && `-${lastSetNumber}`}
                 </span>
                 <span className='lg:hidden'>Level {firstSetNumber}</span>
               </button>
@@ -177,7 +178,10 @@ const VisibleRowsSection = <TItem,>({
               <div
                 className={clsx(
                   'flex w-full flex-col',
-                  'md:grid md:items-start lg:grid-cols-2 2xl:grid-cols-3',
+                  'md:grid md:items-start md:w-fit',
+                  rowSets.length === 1 && 'lg:grid-cols-1',
+                  rowSets.length === 2 && 'lg:grid-cols-2',
+                  rowSets.length >= 3 && 'lg:grid-cols-2 2xl:grid-cols-3',
                 )}
               >
                 {rowSets.map((setTemp, i) => {

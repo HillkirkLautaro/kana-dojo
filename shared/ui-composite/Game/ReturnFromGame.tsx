@@ -24,7 +24,7 @@ import {
   MousePointerClick,
   Keyboard,
   Flame,
-  Info,
+  Check,
   type LucideIcon,
 } from 'lucide-react';
 import ProgressBar from './ProgressBar';
@@ -43,6 +43,7 @@ const GAME_MODE_ICONS: Record<
   type: { icon: Keyboard },
   'anti-type': { icon: Keyboard, className: 'scale-y-[-1]' },
 };
+const USE_TILDE_SEPARATOR = false;
 
 interface StatItemProps {
   icon: LucideIcon;
@@ -91,24 +92,21 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
     if (pathname.includes('/vocabulary')) return 'vocabulary';
     return 'kana';
   }, [pathname]);
-  const { full: selectionLabelFull, compact: selectionLabelCompact } = useMemo(
-    () => {
-      const dojoType = currentDojo as 'kana' | 'kanji' | 'vocabulary';
-      const selection =
-        dojoType === 'kana'
-          ? kanaSelection.selectedGroupIndices
-          : dojoType === 'kanji'
-            ? kanjiSelection.selectedSets
-            : vocabSelection.selectedSets;
-      return getSelectionLabels(dojoType, selection);
-    },
-    [
-      currentDojo,
-      kanaSelection.selectedGroupIndices,
-      kanjiSelection.selectedSets,
-      vocabSelection.selectedSets,
-    ],
-  );
+  const { compact: selectionLabelCompact } = useMemo(() => {
+    const dojoType = currentDojo as 'kana' | 'kanji' | 'vocabulary';
+    const selection =
+      dojoType === 'kana'
+        ? kanaSelection.selectedGroupIndices
+        : dojoType === 'kanji'
+          ? kanjiSelection.selectedSets
+          : vocabSelection.selectedSets;
+    return getSelectionLabels(dojoType, selection);
+  }, [
+    currentDojo,
+    kanaSelection.selectedGroupIndices,
+    kanjiSelection.selectedSets,
+    vocabSelection.selectedSets,
+  ]);
 
   // Start stopwatch when component becomes visible
   useEffect(() => {
@@ -218,7 +216,7 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
       {/* Game mode and stats row */}
       <div className='flex w-full flex-row items-center'>
         {/* Game mode indicator */}
-        <p className='flex w-1/2 items-center justify-start gap-1 text-lg sm:gap-2 sm:pl-1 md:text-xl'>
+        <p className='flex w-1/2 items-center justify-start gap-1.5 text-lg sm:gap-2 sm:pl-1 md:text-xl'>
           {ModeIcon && (
             <ModeIcon
               className={clsx('text-(--main-color)', modeConfig.className)}
@@ -245,7 +243,9 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
                 }}
                 className='rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--main-color)'
               >
-                <Info className='h-5 w-5 text-(--main-color)' />
+                <span className='flex h-6 w-6 items-center justify-center rounded-lg bg-(--main-color) border-b-3 border-(--main-color-accent) ml-0.5 sm:ml-1 mt-0.5'>
+                  <Check className='h-4 w-4 text-(--background-color)' />
+                </span>
               </button>
             </PopoverTrigger>
             <PopoverContent
@@ -261,8 +261,8 @@ const Return = ({ isHidden, gameMode, onQuit }: ReturnProps) => {
             >
               <SelectedLevelsCard
                 currentDojo={currentDojo}
-                fullLabel={selectionLabelFull}
                 compactLabel={selectionLabelCompact}
+                useTildeSeparator={USE_TILDE_SEPARATOR}
               />
             </PopoverContent>
           </Popover>

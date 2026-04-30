@@ -54,6 +54,7 @@ const USE_NEW_GAME_MODE_ICON_STYLE = true;
 const GAME_MODE_ICON_SIZE = 22;
 const GAME_MODE_ICON_FLOAT_DELAY_CLASS = '[animation-delay:180ms]';
 const USE_FLUSH_DIFFICULTY_TABS = false;
+const USE_TILDE_SEPARATOR = false;
 const gameModeIconStyle = {
   base: 'motion-safe:animate-float flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-b-6 transition-colors [--float-distance:-2px]',
   selected:
@@ -281,6 +282,7 @@ const ModeSetupMenu = ({
             currentDojo={currentDojo}
             fullLabel={kanaGroupNamesFull}
             compactLabel={kanaGroupNamesCompact}
+            useTildeSeparator={USE_TILDE_SEPARATOR}
           />
 
           {mode !== 'gauntlet' && (

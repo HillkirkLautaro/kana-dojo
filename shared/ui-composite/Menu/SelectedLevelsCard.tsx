@@ -1,15 +1,40 @@
 'use client';
 
+import clsx from 'clsx';
+
 interface SelectedLevelsCardProps {
   currentDojo: string;
-  fullLabel: string;
   compactLabel: string;
+  useTildeSeparator?: boolean;
 }
+
+const USE_TILDE_SEPARATOR = false;
+
+const renderLabelWithSeparator = (label: string, useTildeSeparator: boolean) => {
+  const parts = label.split(', ');
+  if (parts.length === 1) return label;
+
+  const separator = useTildeSeparator ? '~' : '・';
+
+  return parts.map((part, index) => (
+    <span key={`${part}-${index}`} className='inline'>
+      {part}
+      {index < parts.length - 1 && (
+        <span
+          aria-hidden='true'
+          className={clsx('mx-1 text-(--main-color)', useTildeSeparator && 'mx-1')}
+        >
+          {separator}
+        </span>
+      )}
+    </span>
+  ));
+};
 
 export function SelectedLevelsCard({
   currentDojo,
-  fullLabel,
   compactLabel,
+  useTildeSeparator = USE_TILDE_SEPARATOR,
 }: SelectedLevelsCardProps) {
   const isKana = currentDojo === 'kana';
 
@@ -36,11 +61,8 @@ export function SelectedLevelsCard({
             {isKana ? 'Selected Groups:' : 'Selected Levels:'}
           </span>
         </div>
-        <span className='text-sm break-words text-(--secondary-color) md:hidden'>
-          {compactLabel}
-        </span>
-        <span className='hidden text-sm break-words text-(--secondary-color) md:inline'>
-          {fullLabel}
+        <span className='text-sm break-words text-(--secondary-color)'>
+          {renderLabelWithSeparator(compactLabel, useTildeSeparator)}
         </span>
       </div>
     </div>
